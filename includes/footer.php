@@ -8,7 +8,14 @@
                                 <div class="widget widget-about">
                                     <h4 class="widget-title">About Us</h4>
                                     <p class="text-justify">Tom Associates Training promotes Peer Experiences Every day of the week Every week of the year All year round. Recently, participants in one of our Contract Management classes had a group case exercise involving three companies: execute a gas pipeline contract under very tight time and cost constraints with a very uncompromising weather window..</p>
-                                   
+                                    <address>
+                                        <strong>Socialize with us &nbsp; : &nbsp;</strong><br/><br/>
+                                        <div>
+                                            <a href="http://twitter.com/tomassociatesng" target="_blank" title="twitter page" style="color:#00CCFF;"><i class="fa fa-twitter fa-3x"></i></a> &nbsp; 
+                                            <a href="https://www.facebook.com/tomassociates" title="facebook page" style="color:#039;"><i class="fa fa-facebook fa-3x"></i></a> &nbsp; 
+                                            <a href="https://plus.google.com/110541269371353134717/about" title="google+ page" style="color:#F00;"><i class="fa fa-google-plus fa-3x"></i></a>
+                                        </div>
+                                    </address>
                                 </div>
                             </div>
                             <div class="col-md-3">

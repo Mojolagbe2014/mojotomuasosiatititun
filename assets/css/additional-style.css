@@ -6,3 +6,4 @@
 .multipage .logo a .logo-hex {
     background-color: transparent;
 }
+.post-excerpt ul li { margin-left:10px; list-style-type: circle}
