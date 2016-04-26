@@ -1,6 +1,20 @@
  <!-- HEADER -->
             <header class="header fixed">
-
+                <div>
+                    <?php if(isset($_SESSION['msg'])) {  ?>
+                    <script src="<?php echo SITE_URL; ?>assets/plugins/sweet-alert/sweetalert.min.js" type="text/javascript"></script>
+                    <script>
+                        swal({
+                            title: "Message Box!",
+                            text: '<?php echo $_SESSION['msg']; ?>',
+                            confirmButtonText: "Okay",
+                            customClass: 'google',
+                            html: true,
+                            type: '<?php echo $_SESSION['msgStatus']; ?>'
+                        });
+                    </script>
+                    <?php  unset($_SESSION['msg']); unset($_SESSION['msgStatus']);  } ?>
+                </div>
                 <!-- Top Line -->
                 <div class="top-line">
                     <div class="container">

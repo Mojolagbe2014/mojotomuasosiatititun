@@ -1,4 +1,5 @@
 <?php
+session_start();
 include ('scripts/config.php');
 include('scripts/DBClass.php');
 include('scripts/user_functions.php');
@@ -18,19 +19,21 @@ $database = new Database();
         <link rel="shortcut icon" href="assets/ico/tom_favicon.ico">
 
         <!-- CSS Global -->
-        <link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-        <link href="assets/plugins/fontawesome/css/font-awesome.min.css" rel="stylesheet">
-        <link href="assets/plugins/bootstrap-select/bootstrap-select.min.css" rel="stylesheet">
-        <link href="assets/plugins/jquery-ui-1.11.4.custom/jquery-ui.min.css" rel="stylesheet" type="text/css">
-        <link href="assets/plugins/owlcarousel2/assets/owl.carousel.min.css" rel="stylesheet">
-        <link href="assets/plugins/owlcarousel2/assets/owl.theme.default.min.css" rel="stylesheet">
-        <link href="assets/plugins/prettyphoto/css/prettyPhoto.css" rel="stylesheet">
-        <link href="assets/plugins/animate/animate.min.css" rel="stylesheet">
-        <link href="assets/plugins/countdown/jquery.countdown.css" rel="stylesheet">
+        <link href="<?php echo SITE_URL; ?>assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="<?php echo SITE_URL; ?>assets/plugins/fontawesome/css/font-awesome.min.css" rel="stylesheet">
+        <link href="<?php echo SITE_URL; ?>assets/plugins/bootstrap-select/bootstrap-select.min.css" rel="stylesheet">
+        <link href="<?php echo SITE_URL; ?>assets/plugins/jquery-ui-1.11.4.custom/jquery-ui.min.css" rel="stylesheet" type="text/css">
+        <link href="<?php echo SITE_URL; ?>assets/plugins/owlcarousel2/assets/owl.carousel.min.css" rel="stylesheet">
+        <link href="<?php echo SITE_URL; ?>assets/plugins/owlcarousel2/assets/owl.theme.default.min.css" rel="stylesheet">
+        <link href="<?php echo SITE_URL; ?>assets/plugins/prettyphoto/css/prettyPhoto.css" rel="stylesheet">
+        <link href="<?php echo SITE_URL; ?>assets/plugins/animate/animate.min.css" rel="stylesheet">
+        <link href="<?php echo SITE_URL; ?>assets/plugins/countdown/jquery.countdown.css" rel="stylesheet">
 
-        <link href="assets/css/theme.css" rel="stylesheet">
-        <link href="assets/css/custom.css" rel="stylesheet">
-        <link href="assets/css/additional-style.css" rel="stylesheet" type="text/css"/>
+        <link href="<?php echo SITE_URL; ?>assets/css/theme.css" rel="stylesheet">
+        <link href="<?php echo SITE_URL; ?>assets/css/custom.css" rel="stylesheet">
+        <link href="<?php echo SITE_URL; ?>assets/css/additional-style.css" rel="stylesheet" type="text/css"/>
+        <link href="<?php echo SITE_URL; ?>assets/plugins/sweet-alert/sweetalert.css" rel="stylesheet" type="text/css"/>
+        <link href="<?php echo SITE_URL; ?>assets/plugins/sweet-alert/google.css" rel="stylesheet" type="text/css"/>
         <!--[if lt IE 9]>
         <script src="assets/plugins/iesupport/html5shiv.js"></script>
         <script src="assets/plugins/iesupport/respond.min.js"></script>
@@ -436,17 +439,18 @@ $database = new Database();
                                 <div class="col-sm-12 form-alert"></div>
                                 <div class="col-lg-12">
                                     <div class="form-group">
-                                        <input type="text" placeholder="User Name" title="" data-toggle="tooltip" class="form-control input-name" data-original-title="Name is required">
+                                        <input type="text" placeholder="User Name" name="subscriberName" title="" data-toggle="tooltip" class="form-control input-name" data-original-title="Name is required">
                                     </div>
                                 </div>
                                 <div class="col-sm-12">
                                     <div class="form-group">
-                                        <input type="text"  placeholder="E-mail"  title="" data-toggle="tooltip" class="form-control input-password" data-original-title="Email is required">
+                                        <input type="text" name="subscriberEmail"  placeholder="E-mail"  title="" data-toggle="tooltip" class="form-control input-password" data-original-title="Email is required">
                                     </div>
                                 </div>                                  
                                 <div class="col-sm-12">
                                     <div class="text-center">
-                                        <button type="submit" class="btn btn-theme btn-block submit-button" data-animation-delay="100" data-animation="flipInY"> Subscribe Now <i class="fa fa-arrow-circle-right"></i></button>
+                                        <input type="hidden" name="subscriberSubmit" id="subscriberSubmit" value="TRUE" />
+                                        <button type="submit" class="btn btn-theme btn-block" data-animation-delay="100" data-animation="flipInY"> Subscribe Now <i class="fa fa-arrow-circle-right"></i></button>
                                     </div>
                                 </div>
                             </div>
