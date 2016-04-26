@@ -565,40 +565,40 @@ $(document).ready(function () {
                 var mapOptions = {
                     scrollwheel: false,
                     zoom: 10,
-                    center: new google.maps.LatLng(41.079379, 28.9984466) // map coordinates
+                    center: new google.maps.LatLng(6.6088109, 3.4371245) // map coordinates
                 };
 
                 map = new google.maps.Map(document.getElementById('map-canvas1'),
                         mapOptions);
                 marker = new google.maps.Marker({
-                    position: new google.maps.LatLng(41.0096559, 28.9755535), // marker coordinates
+                    position: new google.maps.LatLng(6.9088109, 3.4371245), // marker coordinates
                     map: map,
                     icon: image,
-                    title: 'Hello World!'
+                    title: '5/7, Alade Lawal Street, Opposite Anthony Police Station, Idi-Iroko, Anthony Village, Lagos - Nigeria. '
                 });
                 marker2 = new google.maps.Marker({
                     position: new google.maps.LatLng(41.007135, 28.910556), // marker coordinates
                     map: map,
                     icon: image,
-                    title: 'Hello World!'
+                    title: '5/7, Alade Lawal Street, Opposite Anthony Police Station, Idi-Iroko, Anthony Village, Lagos - Nigeria. '
                 });
                 marker3 = new google.maps.Marker({
                     position: new google.maps.LatLng(41.040807, 28.848071), // marker coordinates
                     map: map,
                     icon: image,
-                    title: 'Hello World!'
+                    title: '5/7, Alade Lawal Street, Opposite Anthony Police Station, Idi-Iroko, Anthony Village, Lagos - Nigeria. '
                 });
                 marker4 = new google.maps.Marker({
                     position: new google.maps.LatLng(41.051164, 29.078097), // marker coordinates
                     map: map,
                     icon: image,
-                    title: 'Hello World!'
+                    title: '5/7, Alade Lawal Street, Opposite Anthony Police Station, Idi-Iroko, Anthony Village, Lagos - Nigeria. '
                 });
                 marker5 = new google.maps.Marker({
                     position: new google.maps.LatLng(41.077050, 28.995013), // marker coordinates
                     map: map,
                     icon: image,
-                    title: 'Hello World!'
+                    title: '5/7, Alade Lawal Street, Opposite Anthony Police Station, Idi-Iroko, Anthony Village, Lagos - Nigeria. '
                 });
 
                 infowindow = new google.maps.InfoWindow({

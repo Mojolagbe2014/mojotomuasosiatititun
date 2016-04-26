@@ -57,7 +57,7 @@
                                         foreach($facility as $facility){
                                         ?>
                                         <li>
-                                            <a class="thumb-holder" data-rel="prettyPhoto" href="<?php echo SITE_URL; ?>images/gallery/<?php echo $facility['file'];?>" title="gallery image">
+                                            <a class="thumb-holder" data-rel="prettyPhoto" href="<?php echo SITE_URL; ?>gallery" title="gallery image">
                                                 <img src="<?php echo SITE_URL; ?>images/gallery/thumb/<?php echo $facility['file'];?>" alt="gallery images">
                                             </a>
                                         </li>
