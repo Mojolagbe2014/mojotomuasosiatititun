@@ -529,15 +529,15 @@ var theme = function () {
                 var mapOptions = {
                     scrollwheel: false,
                     zoom: 10,
-                    center: new google.maps.LatLng(40.9807648, 28.9866516) // map coordinates
+                    center: new google.maps.LatLng(6.6088109, 3.4371245) // map coordinates
                 };
                 map = new google.maps.Map(document.getElementById('map-canvas'),
                         mapOptions);
                 marker = new google.maps.Marker({
-                    position: new google.maps.LatLng(41.0096559, 28.9755535), // marker coordinates
+                    position: new google.maps.LatLng(6.9088109, 3.4371245), // marker coordinates
                     map: map,
                     icon: image,
-                    title: 'Hello World!'
+                    title: '5/7 Alade Lawal Street, opposite Anthony Police Station,  Anthony Village, off Ikorodu Road, Lagos, Nigeria'
                 });
             }
             google.maps.event.addDomListener(window, 'load', initialize);
