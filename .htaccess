@@ -1,0 +1,43 @@
+
+# Force download of files
+<FilesMatch "\.(doc|docx|xls|csv|txt|pdf)$">
+ ForceType application/octet-stream
+ Header set Content-Disposition attachment
+</FilesMatch>
+
+RewriteEngine on
+
+ErrorDocument 404 /errorPage.php
+
+RewriteEngine on
+
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteCond %{REQUEST_FILENAME}\.php -f
+
+RewriteRule ^([^/]+)/?$ $1.php [NC,L]
+
+RewriteRule ^([^/]+)/([^/]+)/([0-9]+)/?$ $1.php?$2=$3 [NC,L]
+
+RewriteRule ^login/([^/]+)/?$ login.php?login=$1 [NC,L]
+
+RewriteRule ^news/([0-9]+)/?$ news.php?news_id=$1 [NC,L]
+
+RewriteRule ^events/([0-9]+)/detail/?$ event_detail.php?detail=$1 [NC,L]
+
+RewriteRule ^events/([^/]+)/?$ all_event.php [NC,L]
+
+RewriteRule ^events/all/([^/]+)/([0-9]+)/?$ all_event.php?page=$2 [NC,L]
+
+RewriteRule ^events/categories/([0-9]+)/([^/]+)/?$ all_event.php?category=$1 [NC,L]
+
+RewriteRule ^events/categories/([0-9]+)/([^/]+)/([A-Za-z0-9-]+)/([0-9]+)/?$ all_event.php?category=$1&page=$4 [NC,L]
+
+
+#RewriteCond %{HTTP_HOST} !^www\.
+
+#RewriteRule ^(.*)$ http://www.%{HTTP_HOST}/$1 [R=301,L]
+
+
+
+

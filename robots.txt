@@ -1,0 +1,28 @@
+User-agent: *
+
+Disallow: /css/
+
+Disallow: /images/
+
+Disallow: /admin/
+
+Disallow: /scripts/
+
+Disallow: /tools/
+
+Disallow: /cdn-cgi/
+
+user-agent: AhrefsBot
+disallow: / 
+
+User-agent: AlexaBot
+Allow: /
+
+User-agent: Googlebot 
+
+Allow: /
+
+User-Agent: bingbot
+Allow: /
+
+Sitemap: http://www.tomassociatesng.com/sitemap.xml

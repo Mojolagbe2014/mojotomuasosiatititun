@@ -1,0 +1,8 @@
+.logo a .logo-hex {background-color:transparent}
+.logo-hex {
+    margin-top: 9px;
+    height: 43px;
+}
+.multipage .logo a .logo-hex {
+    background-color: transparent;
+}
