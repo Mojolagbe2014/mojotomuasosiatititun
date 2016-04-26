@@ -239,7 +239,7 @@ function list_events($day,$month,$year) {
 				echo "<h2><span> TITLE : </span>" . stripslashes($row['event_title']) . "</h2>";
 				echo "<h2><span> Start Date : </span>".$row['start_date']."</h2>";
 				echo "<h2><span> End Date : </span>".$row['end_date']."</h2>";
-				echo "<div class='content_calendar'><h2><span> Description : </span></h2>".substr(stripslashes(strip_tags($row['event_description'])),0,200)."<a href='training-detail?detail=".$row['event_id']."&".md5($row['event_id'])."' target='_blank'> [...] More</a></div>";
+				echo "<div class='content_calendar'><h2><span> Description : </span></h2>".substr(stripslashes(strip_tags($row['event_description'])),0,200)."<a href='".SITE_URL."course/".$row['event_id']."/".  slugify($row['event_title'])."/' target='_blank'> [...] More</a></div>";
 			echo "</div>";
 			}
 		}

@@ -21,6 +21,8 @@ RewriteRule ^([^/]+)/([^/]+)/([0-9]+)/?$ $1.php?$2=$3 [NC,L]
 
 RewriteRule ^article/([0-9]+)/([^/]+)/?$ article.php?id=$1 [NC,L]
 
+RewriteRule ^course/([0-9]+)/([^/]+)/?$ course.php?id=$1 [NC,L]
+
 #RewriteCond %{HTTP_HOST} !^www\.
 
 #RewriteRule ^(.*)$ http://www.%{HTTP_HOST}/$1 [R=301,L]
