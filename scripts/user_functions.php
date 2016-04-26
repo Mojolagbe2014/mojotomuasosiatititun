@@ -272,4 +272,10 @@ function slugify($text) {
    if (empty($text)) { return 'n-a';  }
    return $text;
 }
+
+function active($url, $menuName, $actPagCssClass){ 
+    if(strpos($url, $menuName)){ 
+        return $actPagCssClass;
+    } 
+ }
 ?>

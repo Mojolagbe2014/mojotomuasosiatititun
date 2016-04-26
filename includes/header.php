@@ -52,10 +52,10 @@
                         <nav class="navigation closed clearfix">
                             <a href="#" class="menu-toggle btn"><i class="fa fa-bars"></i></a>
                             <ul class="sf-menu nav">
-                                <li class="active">
+                                <li class="<?php echo active($_SERVER['SCRIPT_NAME'], 'index', 'active'); ?>">
                                     <a href="<?php echo SITE_URL; ?>">Home</a>
                                 </li>
-                                <li>
+                                <li class="<?php echo active($_SERVER['REQUEST_URI'], 'about-us', 'active').active($_SERVER['REQUEST_URI'], 'services', 'active').active($_SERVER['REQUEST_URI'], 'gallery', 'active'); ?>">
                                     <a href="<?php echo SITE_URL.'about-us'; ?>">About</a>
                                     <ul>
                                         <li><a href="<?php echo SITE_URL.'about-us'; ?>">About Us</a></li>
@@ -63,10 +63,10 @@
                                         <li><a href="<?php echo SITE_URL.'gallery'; ?>">Gallery</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="<?php echo SITE_URL.'courses'; ?>">Courses</a> </li>
-                                <li><a href="<?php echo SITE_URL.'calendar'; ?>">Calendar</a></li>
-                                <li><a href="<?php echo SITE_URL.'articles'; ?>">Articles</a></li>
-                                <li><a href="<?php echo SITE_URL.'contact-us'; ?>">Contact Us</a></li>
+                                <li class="<?php echo active($_SERVER['REQUEST_URI'], 'courses', 'active'); ?>"><a href="<?php echo SITE_URL.'courses'; ?>">Courses</a> </li>
+                                <li class="<?php echo active($_SERVER['REQUEST_URI'], 'calendar', 'active'); ?>"><a href="<?php echo SITE_URL.'calendar'; ?>">Calendar</a></li>
+                                <li class="<?php echo active($_SERVER['REQUEST_URI'], 'articles', 'active'); ?>"><a href="<?php echo SITE_URL.'articles'; ?>">Articles</a></li>
+                                <li class="<?php echo active($_SERVER['REQUEST_URI'], 'contact-us', 'active'); ?>"><a href="<?php echo SITE_URL.'contact-us'; ?>">Contact Us</a></li>
                                 <li class="header-search-wrapper">
                                     <form action="<?php echo SITE_URL.'search'; ?>" class="header-search-form">
                                         <input type="text" name="q" id="q" class="form-control header-search" placeholder="Search"/>
