@@ -196,8 +196,8 @@ $pageKeywords = "course, upcoming";
                                                 <div class="media">
                                                     <a href="<?php echo SITE_URL.'course/'.$upcomingCourse['event_id'].'/'.  slugify($upcomingCourse['event_title']); ?>/" class="like"><i class="fa fa-heart"></i></a>
                                                     <div class="date">
-                                                        <span>25</span>
-                                                        <span>Jan</span>
+                                                        <span><?php echo $thisStartDate[1]; ?></span>
+                                                        <span><?php echo substr($thisStartDate[0], 0, 3); ?></span>
                                                     </div>
                                                     <img src="<?php echo SITE_URL.'admin/images/courses/'.$upcomingCourse['image']; ?>" alt="<?php echo $upcomingCourse['event_title']; ?>">
                                                     <div class="caption hovered"></div>

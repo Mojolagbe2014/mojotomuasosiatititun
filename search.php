@@ -5,6 +5,8 @@ include('scripts/DBClass.php');
 include('scripts/user_functions.php');
 $database = new Database();
 
+if(filter_input(INPUT_GET, 'q') ==NULL && filter_input(INPUT_GET, 'state') ==NULL && filter_input(INPUT_GET, 'category') ==NULL && filter_input(INPUT_GET, 'datetimepicker') ==NULL) { header("Location: ".SITE_URL."courses"); }
+
 $recordperpage =  15;
 $pg = "";
 $pagenum = 1;
@@ -13,19 +15,30 @@ $pagenum = $_GET['page'];
 $pg = $_GET['page'];
 }
 $offset = ($pagenum - 1) * $recordperpage;
+
+$q = (filter_input(INPUT_GET, 'q')) ? " AND event_title LIKE '%".(filter_input(INPUT_GET, 'q'))."%' " : "";
+$qState = (filter_input(INPUT_GET, 'state')) ? " AND state =".(filter_input(INPUT_GET, 'state'))." " : "";
+$qCategory = (filter_input(INPUT_GET, 'category')) ? " AND department =".(filter_input(INPUT_GET, 'category'))." " : "";
+$qDate = (filter_input(INPUT_GET, 'datetimepicker') != "Select Date" && filter_input(INPUT_GET, 'datetimepicker') != NULL) ? explode('/', str_replace("e", "", (filter_input(INPUT_GET, 'datetimepicker')))) : "";
+$qRefDate = !empty($qDate) ? " AND sort_date = '".$qDate[2]."-".$qDate[0]."-".$qDate[1]."' " : ""; 
+
+$addQuery = empty($q) ? $qState.$qCategory.$qRefDate : $q;
+
+$thisCategory = $qCategory!="" ? $database -> select(false,'course_categories'," cat_id = ".(filter_input(INPUT_GET, 'category')),"cat_id LIMIT 1") : "";
+$thisState = $qState!="" ? $database -> select(false,'states'," id = ".(filter_input(INPUT_GET, 'state'))," id LIMIT 1") : "";
+$thisDate = !empty($qDate) ? $qDate[2]."-".$qDate[1]."-".$qDate[0] : "";
+
+$searchTerms = empty($q) ? "Courses ".(!empty($thisCategory) ? " in ".$thisCategory['cat_name']." Category, " :"").(!empty($thisState) ? " in ".$thisState['name']." State, " :"").(!empty($thisDate) ? " on ".$thisDate." " :"") : (filter_input(INPUT_GET, 'q'));
+
+$pageAuthor = "Tom Associates Training";
+$pageTitle = "Search Result for $searchTerms - $pageAuthor";
+$pageDescription = $pageTitle;
+$pageKeywords = "course, search";
 ?>
 <!DOCTYPE html>
 <html lang="en"><!--<![endif]-->
     <head>
-        <meta charset="utf-8">
-        <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <title>All Upcoming Courses - Tom Associates Training</title>
-        <meta name="description" content="Tom Associates is a foremost and very consistent management training institution in Nigeria, focusing on the development of private and public sector managers since 1992.">
-        <!-- Favicons -->
-        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
-        <link rel="shortcut icon" href="assets/ico/tom_favicon.ico">
+        <?php include('includes/meta-tags.php'); ?>
 
         <!-- CSS Global -->
         <link href="<?php echo SITE_URL; ?>assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -67,10 +80,10 @@ $offset = ($pagenum - 1) * $recordperpage;
 
                 <section class="page-section image breadcrumbs overlay">
                     <div class="container">
-                        <h1>ALL UPCOMING COURSES</h1>
+                        <h1>Search Result</h1>
                         <ul class="breadcrumb">
                             <li><a href="<?php echo SITE_URL; ?>">Home</a></li>
-                            <li class="active">All Courses</li>
+                            <li class="active">Search Result</li>
                         </ul>
                     </div>
                 </section>
@@ -127,6 +140,9 @@ $offset = ($pagenum - 1) * $recordperpage;
                         <section id="content" class="content col-sm-8 col-md-9">
 
                             <div class="listing-meta">
+                                <div class="filters">
+                                    Result for: <em class="text-danger"><a href="#"> <?php echo $searchTerms; ?></a></em>
+                                </div>
                                 <div class="options">
                                     <ul class="list-grid-tabs" role="tablist">                                    
                                         <li role="presentation"> <a class="view-list" href="#list-view" data-toggle="tab" role="tab" ><i class="fa fa-th-list"></i></a></li>
@@ -140,7 +156,7 @@ $offset = ($pagenum - 1) * $recordperpage;
                                 <div id="list-view"  class="tab-pane fade" role="tabpanel">
                                     <div class="thumbnails events vertical">
                                         <?php
-                                        $upcomingCourses = $database -> select(true,"events","status = 1 and sort_date >= '".date('Y-m-d')."' ","sort_date LIMIT $recordperpage OFFSET $offset ");
+                                        $upcomingCourses = $database -> select(true,"events","status = 1 $addQuery ","sort_date LIMIT $recordperpage OFFSET $offset ");
                                         foreach($upcomingCourses as $upcomingCourse){
                                             $thisStartDat = explode(',', $upcomingCourse['start_date']);
                                             $thisStartDate =  explode(' ', $thisStartDat[0]);
@@ -171,7 +187,6 @@ $offset = ($pagenum - 1) * $recordperpage;
                                                 </div>
                                             </div>
                                         </div>
-
                                         <hr class="page-divider half"/>
                                         <?php } ?>
 
@@ -179,14 +194,14 @@ $offset = ($pagenum - 1) * $recordperpage;
 
                                     <!-- Pagination -->
                                     <div class="pagination-wrapper">
-                                        <?php PagingNew('events',"status = 1 and sort_date >= '".date('Y-m-d')."'","event_id",$recordperpage,$pagenum,"courses?get")?>
+                                        <?php PagingNew('events',"status = 1 $addQuery ","event_id",$recordperpage,$pagenum,"courses?get")?>
                                     </div>
                                     <!-- /Pagination -->
                                 </div>
                                 <div id="grid-view"  class="tab-pane fade active in" role="tabpanel">
                                     <div class="row thumbnails events">
                                         <?php
-                                        $upcomingCours = $database -> select(true,"events","status = 1 and sort_date >= '".date('Y-m-d')."' ","sort_date LIMIT $recordperpage OFFSET $offset ");
+                                        $upcomingCours = $database -> select(true,"events","status = 1 $addQuery ","sort_date LIMIT $recordperpage OFFSET $offset ");
                                         foreach($upcomingCours as $upcomingCourse){
                                             $thisStartDat = explode(',', $upcomingCourse['start_date']);
                                             $thisStartDate =  explode(' ', $thisStartDat[0]);
@@ -216,7 +231,7 @@ $offset = ($pagenum - 1) * $recordperpage;
 
                                     <!-- Pagination -->
                                     <div class="pagination-wrapper">
-                                        <?php PagingNew('events',"status = 1 and sort_date >= '".date('Y-m-d')."'","event_id",$recordperpage,$pagenum,"courses?get")?>
+                                        <?php PagingNew('events',"status = 1 $addQuery ","event_id",$recordperpage,$pagenum,"courses?get")?>
                                     </div>
                                     <!-- /Pagination -->
                                 </div>                                
