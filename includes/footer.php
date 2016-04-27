@@ -12,8 +12,8 @@
                                         <strong>Socialize with us &nbsp; : &nbsp;</strong><br/><br/>
                                         <div>
                                             <a href="http://twitter.com/tomassociatesng" target="_blank" title="twitter page" style="color:#00CCFF;"><i class="fa fa-twitter fa-3x"></i></a> &nbsp; 
-                                            <a href="https://www.facebook.com/tomassociates" title="facebook page" style="color:#039;"><i class="fa fa-facebook fa-3x"></i></a> &nbsp; 
-                                            <a href="https://plus.google.com/110541269371353134717/about" title="google+ page" style="color:#F00;"><i class="fa fa-google-plus fa-3x"></i></a>
+                                            <a href="https://www.facebook.com/tomassociates" target="_blank" title="facebook page" style="color:#039;"><i class="fa fa-facebook fa-3x"></i></a> &nbsp; 
+                                            <a href="https://plus.google.com/110541269371353134717/about" target="_blank" title="google+ page" style="color:#F00;"><i class="fa fa-google-plus fa-3x"></i></a>
                                         </div>
                                     </address>
                                 </div>
