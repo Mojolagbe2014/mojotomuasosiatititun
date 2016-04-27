@@ -4,6 +4,7 @@ define("USER","root");
 define("PASSWORD","");
 define("SERVER","localhost");
 define("SITE_URL","http://localhost/tomassrebuilt/");
+define("SITE_URL1","http://localhost/tomassrebuilt");
 
 header('Content-type: text/html; charset=UTF-8') ;
 
