@@ -26,7 +26,7 @@
                                         $mediaItems = $database->select(true,'uploads',"","id LIMIT 10");
                                         foreach($mediaItems as $mediaItem){
                                         ?>
-                                        <li><a href="<?php echo SITE_URL.'media'; ?>" title="<?php echo $mediaItem['title'];?>"><?php echo $mediaItem['title'];?></a></li>
+                                        <li><a href="<?php echo SITE_URL.'media-library'; ?>" title="<?php echo $mediaItem['title'];?>"><?php echo $mediaItem['title'];?></a></li>
 	                         
                                         <?php } ?>
                                     </ul>
@@ -80,6 +80,7 @@
                                     <li><a href="<?php echo SITE_URL.'courses'; ?>">Courses</a></li>
                                     <li><a href="<?php echo SITE_URL.'gallery'; ?>">Gallery</a></li>
                                     <li><a href="<?php echo SITE_URL.'articles'; ?>">Articles</a></li>
+                                    <li><a href="<?php echo SITE_URL.'media-library'; ?>">Media Library</a></li>
                                 </ul>
                             </div>
                             <div class="col-md-3 col-sm-6">

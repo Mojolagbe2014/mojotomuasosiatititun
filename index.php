@@ -244,7 +244,7 @@ $database = new Database();
                                                 <div class="rehex-inner">
                                                     <div class="caption-wrapper div-table">
                                                         <div class="caption-inner div-cell">
-                                                            <p class="caption-buttons"><a href="<?php echo SITE_URL.'media'; ?>" class="btn caption-link"><i class="fa fa-music"></i></a></p>
+                                                            <p class="caption-buttons"><a href="<?php echo SITE_URL.'media-library'; ?>" class="btn caption-link"><i class="fa fa-music"></i></a></p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -254,7 +254,7 @@ $database = new Database();
                                     <div class="caption">
                                         <h3 class="caption-title">Our Media Library</h3>
                                         <p class="caption-text">Browse our library to find career changing information</p>
-                                        <p class="caption-more"><a href="<?php echo SITE_URL.'media'; ?>" class="btn btn-theme">Details</a></p>
+                                        <p class="caption-more"><a href="<?php echo SITE_URL.'media-library'; ?>" class="btn btn-theme">Details</a></p>
                                     </div>
                                 </div>
                             </div>

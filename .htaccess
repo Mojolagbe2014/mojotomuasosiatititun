@@ -1,6 +1,6 @@
 
 # Force download of files
-<FilesMatch "\.(doc|docx|xls|csv|txt|pdf)$">
+<FilesMatch "\.(doc|docx|xls|csv|txt|pdf|mp3|mp4|3gp)$">
  ForceType application/octet-stream
  Header set Content-Disposition attachment
 </FilesMatch>
