@@ -63,7 +63,13 @@
                                         <li><a href="<?php echo SITE_URL.'gallery'; ?>">Gallery</a></li>
                                     </ul>
                                 </li>
-                                <li class="<?php echo active($_SERVER['REQUEST_URI'], 'courses', 'active'); ?>"><a href="<?php echo SITE_URL.'courses'; ?>">Courses</a> </li>
+                                <li class="<?php echo active($_SERVER['REQUEST_URI'], 'course', 'active').active($_SERVER['REQUEST_URI'], 'categories', 'active'); ?>">
+                                    <a href="<?php echo SITE_URL.'courses'; ?>">Courses</a> 
+                                    <ul>
+                                        <li><a href="<?php echo SITE_URL.'All Courses'; ?>">All Courses</a></li>
+                                        <li><a href="<?php echo SITE_URL.'categories'; ?>">Categories/Departments</a></li>
+                                    </ul>
+                                </li>
                                 <li class="<?php echo active($_SERVER['REQUEST_URI'], 'calendar', 'active'); ?>"><a href="<?php echo SITE_URL.'calendar'; ?>">Calendar</a></li>
                                 <li class="<?php echo active($_SERVER['REQUEST_URI'], 'articles', 'active'); ?>"><a href="<?php echo SITE_URL.'articles'; ?>">Articles</a></li>
                                 <li class="<?php echo active($_SERVER['REQUEST_URI'], 'contact-us', 'active'); ?>"><a href="<?php echo SITE_URL.'contact-us'; ?>">Contact Us</a></li>
