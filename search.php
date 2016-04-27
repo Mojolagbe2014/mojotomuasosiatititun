@@ -17,8 +17,8 @@ $pg = $_GET['page'];
 $offset = ($pagenum - 1) * $recordperpage;
 
 $q = (filter_input(INPUT_GET, 'q')) ? " AND event_title LIKE '%".(filter_input(INPUT_GET, 'q'))."%' " : "";
-$qState = (filter_input(INPUT_GET, 'state')) ? " AND state =".(filter_input(INPUT_GET, 'state'))." " : "";
-$qCategory = (filter_input(INPUT_GET, 'category')) ? " AND department =".(filter_input(INPUT_GET, 'category'))." " : "";
+$qState = (filter_input(INPUT_GET, 'state') !="Select Location" && filter_input(INPUT_GET, 'state') !=NULL) ? " AND state =".(filter_input(INPUT_GET, 'state'))." " : "";
+$qCategory = (filter_input(INPUT_GET, 'category')!="Select Category" && filter_input(INPUT_GET, 'category')!=NULL) ? " AND department =".(filter_input(INPUT_GET, 'category'))." " : "";
 $qDate = (filter_input(INPUT_GET, 'datetimepicker') != "Select Date" && filter_input(INPUT_GET, 'datetimepicker') != NULL) ? explode('/', str_replace("e", "", (filter_input(INPUT_GET, 'datetimepicker')))) : "";
 $qRefDate = !empty($qDate) ? " AND sort_date = '".$qDate[2]."-".$qDate[0]."-".$qDate[1]."' " : ""; 
 
@@ -26,7 +26,7 @@ $addQuery = empty($q) ? $qState.$qCategory.$qRefDate : $q;
 
 $thisCategory = $qCategory!="" ? $database -> select(false,'course_categories'," cat_id = ".(filter_input(INPUT_GET, 'category')),"cat_id LIMIT 1") : "";
 $thisState = $qState!="" ? $database -> select(false,'states'," id = ".(filter_input(INPUT_GET, 'state'))," id LIMIT 1") : "";
-$thisDate = !empty($qDate) ? $qDate[2]."-".$qDate[1]."-".$qDate[0] : "";
+$thisDate = !empty($qDate) ? $qDate[2]."-".$qDate[0]."-".$qDate[1] : "";
 
 $searchTerms = empty($q) ? "Courses ".(!empty($thisCategory) ? " in ".$thisCategory['cat_name']." Category, " :"").(!empty($thisState) ? " in ".$thisState['name']." State, " :"").(!empty($thisDate) ? " on ".$thisDate." " :"") : (filter_input(INPUT_GET, 'q'));
 
