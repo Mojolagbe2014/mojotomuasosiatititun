@@ -253,7 +253,7 @@ function flashingUpcomingEvents(){
     $num_rows = count($rows);
     if($num_rows > 0) {
         foreach($rows as $row) {
-            echo "\n".'<div><a href="'.SITE_URL.'course/'.$row['event_id'].'/'.  slugify($row['event_title']).'/">'.stripslashes($row['event_title']).' "'. DateRange($row['start_date'],$row['end_date']).'"</a></div>';
+            echo "\n".'<div><a style="color:#000" href="'.SITE_URL.'course/'.$row['event_id'].'/'.  slugify($row['event_title']).'/">'.stripslashes($row['event_title']).' "'. DateRange($row['start_date'],$row['end_date']).'"</a></div>';
         }
     }
 }
