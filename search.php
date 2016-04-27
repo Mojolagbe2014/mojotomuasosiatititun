@@ -16,7 +16,7 @@ $pg = $_GET['page'];
 }
 $offset = ($pagenum - 1) * $recordperpage;
 
-$q = (filter_input(INPUT_GET, 'q')) ? " AND event_title LIKE '%".(filter_input(INPUT_GET, 'q'))."%' " : "";
+$q = (filter_input(INPUT_GET, 'q')) ? " AND sort_date >= '".date('Y-m-d')."'  AND event_title LIKE '%".(filter_input(INPUT_GET, 'q'))."%' " : "";
 $qState = (filter_input(INPUT_GET, 'state') !="Select Location" && filter_input(INPUT_GET, 'state') !=NULL) ? " AND state =".(filter_input(INPUT_GET, 'state'))." " : "";
 $qCategory = (filter_input(INPUT_GET, 'category')!="Select Category" && filter_input(INPUT_GET, 'category')!=NULL) ? " AND department =".(filter_input(INPUT_GET, 'category'))." " : "";
 $qDate = (filter_input(INPUT_GET, 'datetimepicker') != "Select Date" && filter_input(INPUT_GET, 'datetimepicker') != NULL) ? explode('/', str_replace("e", "", (filter_input(INPUT_GET, 'datetimepicker')))) : "";
