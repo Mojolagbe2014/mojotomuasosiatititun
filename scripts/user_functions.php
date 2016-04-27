@@ -278,4 +278,29 @@ function active($url, $menuName, $actPagCssClass){
         return $actPagCssClass;
     } 
  }
+ 
+ function messageBox($message,$type){
+	switch($type){
+            case 'error':   $class = 'alert-danger'; break;
+            case 'success': $class = 'alert-success'; break;
+            case 'info':    $class = 'alert-info'; break;
+            case 'warning': $class = 'alert-warning'; break;
+        }
+        //$html = file_get_contents(TEMPLATE_PATH.'HTML/forms-error-box.html');
+        $html = '<div class="alert '.$class.'"><button type="button" class="close" data-dismiss="alert">&times;</button> '.$message.'</div>';
+        return $html;
+    }
+    
+    /** Method for dispalying error message  */
+    function showError($error){
+        if(is_array($error)){
+            $msg ="<p>Please attend to the following errors:</p><ul>";
+            foreach($error as $error){ $msg .="<li>".$error."</li>"; }     
+            $msg .="</ul>";
+        }
+        else{
+            $msg = $error;
+        }
+        return messageBox($msg, 'error');
+    }
 ?>

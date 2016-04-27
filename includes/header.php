@@ -38,7 +38,7 @@
                         <div class="logo">
                             <a href="<?php echo SITE_URL; ?>" class="scroll-to">
                                 <span class="fa-stack">
-                                    <img class="fa logo-hex fa-stack-2x" src="assets/img/logo.png" alt=""/>
+                                    <img class="fa logo-hex fa-stack-2x" src="<?php echo SITE_URL; ?>assets/img/logo.png" alt=""/>
 <!--                                    <i class="fa logo-hex fa-stack-2x"></i>
                                     <i class="fa logo-fa fa-map-marker fa-stack-1x"></i>-->
                                 </span>

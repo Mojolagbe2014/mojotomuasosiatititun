@@ -34,7 +34,7 @@ if(isset($_POST['submit'])){
         $mailer->send($message);
         $msgStatus = 'success';
         $msg = 'Your message has been sent.';
-    }else{ $msgStatus = 'error'; $msg = $errorArr; }
+    }else{ $msgStatus = 'error'; $msg = showError($errorArr); }
     $_SESSION['msgStatus'] = $msgStatus;
     $_SESSION['msg'] = $msg;
 }
