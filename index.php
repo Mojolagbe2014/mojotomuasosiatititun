@@ -4,19 +4,16 @@ include ('scripts/config.php');
 include('scripts/DBClass.php');
 include('scripts/user_functions.php');
 $database = new Database();
+
+$pageAuthor = "Tom Associates Training";
+$pageTitle = "Tom Associates | Best in Class Management Training in Nigeria";
+$pageDescription = "Tom Associates is a foremost and very consistent management training institution in Nigeria, focusing on the development of private and public sector managers since 1992.";
+$pageKeywords = "course, upcoming, training, tom associate, events";
 ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="utf-8">
-        <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <title>Tom Associates | Best in Class Management Training in Nigeria</title>
-        <meta name="description" content="Tom Associates is a foremost and very consistent management training institution in Nigeria, focusing on the development of private and public sector managers since 1992.">
-        <!-- Favicons -->
-        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
-        <link rel="shortcut icon" href="assets/ico/tom_favicon.ico">
+        <?php include('includes/meta-tags.php'); ?>
 
         <!-- CSS Global -->
         <link href="<?php echo SITE_URL; ?>assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -164,7 +161,11 @@ $database = new Database();
                 <!-- PAGE -->
                 <section class="page-section light">
                     <div class="container">
-
+                        <div class="banner-holder hide-mobile">
+                            <p>Running Courses</p>
+                            <?php $imageFileName = file_get_contents("images/bannerName.php"); ?>
+                            <a href="calendar?month=<?php echo date('m');?>&year=<?php echo date('Y');?>"><img src="images/<?php echo $imageFileName;?>" width="728" height="90" alt="tom banner advert"></a>
+                        </div>
                         <div class="row thumbnails info-thumbs clear">
                             <div class="col-sm-6 col-md-3" data-animation="fadeInUp" data-animation-delay="100">
                                 <div class="thumbnail no-border no-padding text-center">

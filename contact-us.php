@@ -12,13 +12,14 @@ if(isset($_POST['submit'])){
     $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL) ? mysqli_real_escape_string($database->link, filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL)) :  ''; 
     if($email == "") {array_push ($errorArr, "valid email ");}
     $name = filter_input(INPUT_POST, 'name') ? mysqli_real_escape_string($database->link, filter_input(INPUT_POST, 'name')) :  ''; 
-    if($name == "") {array_push ($errorArr, " name ");}
+    if($name == "" || $name == "Type Your Name...") {array_push ($errorArr, " name ");}
     $phone = filter_input(INPUT_POST, 'phone') ? mysqli_real_escape_string($database->link, filter_input(INPUT_POST, 'phone')) :  ''; 
-    if($phone == "") {array_push ($errorArr, " phone number ");}
+    if($phone == "" || $phone == "Type Your Phone Number...") {array_push ($errorArr, " phone number ");}
     $body = filter_input(INPUT_POST, 'message') ? mysqli_real_escape_string($database->link, filter_input(INPUT_POST, 'message')) :  ''; 
-    if($body == "") {array_push ($errorArr, " message ");}
+    if($body == "" || $body == "Type Your Message...") {array_push ($errorArr, " message ");}
     $subject = filter_input(INPUT_POST, 'subject') ? mysqli_real_escape_string($database->link, filter_input(INPUT_POST, 'subject')) :  ''; 
-
+    if($subject == "Type Subject...") {$subject = "";}
+    
     if(count($errorArr) < 1)   {
         $emailAddress = 'info@tomassociatesng.com';
         if(empty($subject)) $subject = "Inquiry Message From: $name ($phone)";
@@ -38,19 +39,16 @@ if(isset($_POST['submit'])){
     $_SESSION['msgStatus'] = $msgStatus;
     $_SESSION['msg'] = $msg;
 }
+
+$pageAuthor = "Tom Associates Training";
+$pageTitle = "Contact Us - $pageAuthor";
+$pageDescription = $pageTitle;
+$pageKeywords = "contact, us";
 ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="utf-8">
-        <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <title>Contact Us - Tom Associates Training</title>
-        <meta name="description" content="Tom Associates is a foremost and very consistent management training institution in Nigeria, focusing on the development of private and public sector managers since 1992.">
-        <!-- Favicons -->
-        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
-        <link rel="shortcut icon" href="assets/ico/tom_favicon.ico">
+        <?php include('includes/meta-tags.php'); ?>
 
         <!-- CSS Global -->
         <link href="<?php echo SITE_URL; ?>assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">

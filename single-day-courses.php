@@ -4,19 +4,16 @@ include ('scripts/config.php');
 include('scripts/DBClass.php');
 include('scripts/user_functions.php');
 $database = new Database();
+
+$pageAuthor = "Tom Associates Training";
+$pageTitle = "Calendar for Current Upcoming Courses - $pageAuthor";
+$pageDescription = $pageTitle;
+$pageKeywords = "course, upcoming, calendar, current";
 ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="utf-8">
-        <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <title>Calendar for Current Upcoming Courses - Tom Associates Training</title>
-        <meta name="description" content="Tom Associates is a foremost and very consistent management training institution in Nigeria, focusing on the development of private and public sector managers since 1992.">
-        <!-- Favicons -->
-        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
-        <link rel="shortcut icon" href="<?php echo SITE_URL; ?>assets/ico/tom_favicon.ico">
+        <?php include('includes/meta-tags.php'); ?>
 
         <!-- CSS Global -->
         <link href="<?php echo SITE_URL; ?>assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">

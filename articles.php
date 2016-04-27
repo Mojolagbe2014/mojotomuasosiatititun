@@ -12,19 +12,16 @@ $pagenum = $_GET['page'];
 $pg = $_GET['page'];
 }
 $offset = ($pagenum - 1) * $recordperpage;
+
+$pageAuthor = "Tom Associates Training";
+$pageTitle = "All Articles - $pageAuthor";
+$pageDescription = $pageTitle;
+$pageKeywords = "all, article";
 ?>
 <!DOCTYPE html>
 <html lang="en"><!--<![endif]-->
     <head>
-        <meta charset="utf-8">
-        <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <title>Articles/Resources - Tom Associates Training</title>
-        <meta name="description" content="Tom Associates is a foremost and very consistent management training institution in Nigeria, focusing on the development of private and public sector managers since 1992.">
-        <!-- Favicons -->
-        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
-        <link rel="shortcut icon" href="assets/ico/tom_favicon.ico">
+        <?php include('includes/meta-tags.php'); ?>
 
         <!-- CSS Global -->
         <link href="<?php echo SITE_URL; ?>assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">

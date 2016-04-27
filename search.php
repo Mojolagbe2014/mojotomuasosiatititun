@@ -156,7 +156,7 @@ $pageKeywords = "course, search";
                                 <div id="list-view"  class="tab-pane fade" role="tabpanel">
                                     <div class="thumbnails events vertical">
                                         <?php
-                                        $upcomingCourses = $database -> select(true,"events","status = 1 $addQuery ","sort_date LIMIT $recordperpage OFFSET $offset ");
+                                        $upcomingCourses = $database -> select(true,"events","status = 1 $addQuery ","sort_date DESC LIMIT $recordperpage OFFSET $offset ");
                                         foreach($upcomingCourses as $upcomingCourse){
                                             $thisStartDat = explode(',', $upcomingCourse['start_date']);
                                             $thisStartDate =  explode(' ', $thisStartDat[0]);
@@ -201,7 +201,7 @@ $pageKeywords = "course, search";
                                 <div id="grid-view"  class="tab-pane fade active in" role="tabpanel">
                                     <div class="row thumbnails events">
                                         <?php
-                                        $upcomingCours = $database -> select(true,"events","status = 1 $addQuery ","sort_date LIMIT $recordperpage OFFSET $offset ");
+                                        $upcomingCours = $database -> select(true,"events","status = 1 $addQuery ","sort_date DESC LIMIT $recordperpage OFFSET $offset ");
                                         foreach($upcomingCours as $upcomingCourse){
                                             $thisStartDat = explode(',', $upcomingCourse['start_date']);
                                             $thisStartDate =  explode(' ', $thisStartDat[0]);

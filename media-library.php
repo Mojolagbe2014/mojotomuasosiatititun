@@ -12,32 +12,16 @@ $pagenum = $_GET['page'];
 $pg = $_GET['page'];
 }
 $offset = ($pagenum - 1) * $recordperpage;
+
+$pageAuthor = "Tom Associates Training";
+$pageTitle = "Download our Knowledge in motion audio series - $pageAuthor";
+$pageDescription = $pageTitle;
+$pageKeywords = "media, library";
 ?>
 <!DOCTYPE html>
 <html lang="en"><!--<![endif]-->
     <head>
-        <meta charset="utf-8">
-        <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <title>Download our Knowledge in motion audio series - Tom Associates Training</title>
-        <meta name="description" content="Download our Knowledge in motion audio series">
-        <meta property="og:type" content="website" />
-        <meta property="og:locale" content="en_US" />
-        <meta property="og:title" content="Download our Knowledge in motion audio series" />
-        <meta property="og:url" content="<?php echo SITE_URL1.$_SERVER['REQUEST_URI']; ?>" />
-        <meta property="og:site_name" content="Tom Associate Training" />
-        <meta property="og:title" content="Download our Knowledge in motion audio series" />
-        <meta property="og:description" content="Download our Knowledge in motion audio series" />
-        <meta property="twitter:title" content="Download our Knowledge in motion audio series" />
-        <meta property="twitter:description" content="Download our Knowledge in motion audio series" />
-        <meta property="og:image" content="<?php echo SITE_URL; ?>assets/ico/tom_favicon.ico"/>
-        <meta property="og:image:type" content="image/jpeg"/>
-        <meta property="og:image:width" content="200"/>
-        <meta property="og:image:height" content="200"/>
-        <!-- Favicons -->
-        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
-        <link rel="shortcut icon" href="assets/ico/tom_favicon.ico">
+        <?php include('includes/meta-tags.php'); ?>
 
         <!-- CSS Global -->
         <link href="<?php echo SITE_URL; ?>assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
