@@ -84,13 +84,10 @@ $pageKeywords = "course, department, categories";
                             ?>
                             <article class="post-wrap">
                                 <div class="post-header">
-                                    <h2 class="post-title"><a href="<?php echo SITE_URL.'category/'.$thisCategory['cat_id'].'/'.  slugify($thisCategory['cat_name']).'/'; ?>"><?php echo $thisCategory['cat_name']; ?> (<?php echo CountItem($thisCategory['cat_id'],'department'); ?>)</a></h2>
-                                </div>
-                                
-                                <div class="post-footer">
-                                    <span class="post-readmore">
+                                    <h2 class="post-title"><a href="<?php echo SITE_URL.'category/'.$thisCategory['cat_id'].'/'.  slugify($thisCategory['cat_name']).'/'; ?>"><?php echo $thisCategory['cat_name']; ?> (<?php echo CountItem($thisCategory['cat_id'],'department'); ?>)</a>
+                                    <span class="post-footer post-readmore1">
                                         <a href="<?php echo SITE_URL.'category/'.$thisCategory['cat_id'].'/'.  slugify($thisCategory['cat_name']).'/'; ?>" class="btn btn-theme btn-theme-transparent">View Courses</a>
-                                    </span>
+                                    </span></h2>
                                 </div>
                             </article>
                             <?php } ?>

@@ -1,1 +1,1 @@
-1460636392_TomAssociates_September_2015.gif
+1461837748_Tom_Associates_May_2016_-_Reduced.gif

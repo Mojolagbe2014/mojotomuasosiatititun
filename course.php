@@ -256,7 +256,7 @@ $pageKeywords = "course, upcoming";
 
                             <h1 class="section-title">
                                 <span class="icon-inner"><span class="fa-stack"><i class="fa rhex fa-stack-2x"></i><i class="fa fa-star fa-stack-1x"></i></span></span>
-                                <span class="title-inner">You May Like</span>
+                                <span class="title-inner">You May Also Like</span>
                             </h1>
 
                             <div class="thumbnails events">

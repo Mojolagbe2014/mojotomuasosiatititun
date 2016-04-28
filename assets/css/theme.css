@@ -2695,6 +2695,27 @@ textarea {
     color: #ffffff;
 }
 
+
+.post-readmore1 {display: block; text-align: right;}
+.post-readmore1 .btn {
+    font-size: 14px;
+    padding: 12px 15px;
+    border-color: #435469;
+    color: #435469;
+}
+.post-readmore1 .btn:hover,
+.post-readmore1 .btn:focus {
+    background-color: #435469;
+    border-color: #435469;
+    color: #ffffff;
+}
+
+.post-readmore1 {
+    display: inline;
+    text-align: left;
+    margin-left: 10px;
+}
+
 .post-excerpt {font-size: 14px;}
 
 .post-meta-author,

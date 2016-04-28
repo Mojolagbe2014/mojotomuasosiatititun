@@ -101,7 +101,7 @@ $pageKeywords = "course, upcoming, training, tom associate, events";
                             <div class="col-md-3">
                                 <h1 class="section-title two-lines">
                                     <span data-animation="flipInY" data-animation-delay="300" class="icon-inner"><span class="fa-stack"><i class="fa rhex dark fa-stack-2x"></i><i class="fa fa-calendar fa-stack-1x"></i></span></span>
-                                    <span data-animation="fadeInRight" data-animation-delay="500" class="title-inner"> What You Want <small>Find Best Course For You</small></span>
+                                    <span data-animation="fadeInRight" data-animation-delay="500" class="title-inner"> Advanced Search<small></small></span>
                                 </h1>
                             </div>
                             <div class="col-md-9">
@@ -117,9 +117,10 @@ $pageKeywords = "course, upcoming, training, tom associate, events";
                                                     <?php 
                                                     $statesArrs = $database -> select(true,'states');
 							foreach ($statesArrs as $statesArr){
+                                                            if($statesArr['id']=='25' || $statesArr['id']=='24'){
                                                     ?>
                                                     <option value="<?php echo $statesArr['id'];?>"><?php echo $statesArr['name']; ?></option>
-                                                    <?php } ?>
+                                                    <?php } } ?>
                                                 </select>
                                             </div>                                           
                                         </div>

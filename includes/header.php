@@ -22,7 +22,7 @@
                             <li><a href="#popup-login"  data-toggle="modal"><i class="fa fa-file-text-o"></i> Subscribe</a></li>
                         </ul>
                         <div class="hot-line">
-                            <span><i class="fa fa-calendar"></i> <strong>Latest Event:</strong></span>                           
+                            <span><i class="fa fa-calendar"></i> <strong>Upcoming Events:</strong></span>                           
                             <div id="rotate"> 
                                 <?php flashingUpcomingEvents(); ?>
                             </div> 
@@ -66,7 +66,7 @@
                                 <li class="<?php echo active($_SERVER['REQUEST_URI'], 'course', 'active').active($_SERVER['REQUEST_URI'], 'categories', 'active'); ?>">
                                     <a href="<?php echo SITE_URL.'courses'; ?>">Courses</a> 
                                     <ul>
-                                        <li><a href="<?php echo SITE_URL.'All Courses'; ?>">All Courses</a></li>
+                                        <li><a href="<?php echo SITE_URL.'courses'; ?>">All Courses</a></li>
                                         <li><a href="<?php echo SITE_URL.'categories'; ?>">Categories/Departments</a></li>
                                     </ul>
                                 </li>
