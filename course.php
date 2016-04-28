@@ -10,6 +10,7 @@ if(!isset($_GET['id']) || !is_numeric($_GET['id'])){ header("Location: ".SITE_UR
 
 $data = array('event_id'=>$_GET['id'],"status"=>1);
 $rows = $database -> select(false,"events",$data);
+if($rows['image']==''){$rows['image'] = $rows['department'].".jpg";}
 
 $this_event_state = ''; $add_param = '';
 if($rows['state'] !=0){
@@ -267,6 +268,7 @@ $pageKeywords = "course, upcoming";
                                         foreach($upcomingCourses as $upcomingCourse){
                                             $thisStartDat = explode(',', $upcomingCourse['start_date']);
                                             $thisStartDate =  explode(' ', $thisStartDat[0]);
+                                            if($upcomingCourse['image']==''){$upcomingCourse['image'] = $upcomingCourse['department'].".jpg";}
                                         ?>
                                         <div class="isotope-item festival">
                                             <div class="thumbnail no-border no-padding">

@@ -45,6 +45,7 @@ function CountItem($id,$column){
 
 function PagingNew($table,$cond,$column,$recordperpage,$pagenum,$pagelink){
 	global $database;
+        $pagelink = SITE_URL.$pagelink;
 	$row = $database -> select(false,$table,$cond,"","count($column) as numrows");
 	$total_record = $row ['numrows'];
 	$maxpage = ceil($total_record / $recordperpage);

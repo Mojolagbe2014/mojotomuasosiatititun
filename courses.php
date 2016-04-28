@@ -141,6 +141,7 @@ $pageKeywords = "course, upcoming";
                                         foreach($upcomingCourses as $upcomingCourse){
                                             $thisStartDat = explode(',', $upcomingCourse['start_date']);
                                             $thisStartDate =  explode(' ', $thisStartDat[0]);
+                                            if($upcomingCourse['image']==''){$upcomingCourse['image'] = $upcomingCourse['department'].".jpg";}
                                         ?>
                                         <div class="thumbnail no-border no-padding">
                                             <div class="row">
@@ -184,6 +185,7 @@ $pageKeywords = "course, upcoming";
                                         foreach($upcomingCours as $upcomingCourse){
                                             $thisStartDat = explode(',', $upcomingCourse['start_date']);
                                             $thisStartDate =  explode(' ', $thisStartDat[0]);
+                                            if($upcomingCourse['image']==''){$upcomingCourse['image'] = $upcomingCourse['department'].".jpg";}
                                         ?>
                                         <div class="col-md-4 col-sm-6 isotope-item festival">
                                             <div class="thumbnail no-border no-padding">

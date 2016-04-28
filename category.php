@@ -8,7 +8,7 @@ $database = new Database();
 if(!isset($_GET['id']) || !is_numeric($_GET['id'])){ header("Location: ".SITE_URL."courses"); }
 $thisCategory = $database -> select(false,'course_categories'," cat_id = ".$_GET['id'],"cat_id LIMIT 1");
 
-$recordperpage =  15;
+$recordperpage =  1;
 $pg = "";
 $pagenum = 1;
 if(isset($_GET['page'])){
@@ -144,6 +144,7 @@ $pageKeywords = "course, upcoming";
                                         foreach($upcomingCourses as $upcomingCourse){
                                             $thisStartDat = explode(',', $upcomingCourse['start_date']);
                                             $thisStartDate =  explode(' ', $thisStartDat[0]);
+                                            if($upcomingCourse['image']==''){$upcomingCourse['image'] = $upcomingCourse['department'].".jpg";}
                                         ?>
                                         <div class="thumbnail no-border no-padding">
                                             <div class="row">
@@ -179,7 +180,7 @@ $pageKeywords = "course, upcoming";
 
                                     <!-- Pagination -->
                                     <div class="pagination-wrapper">
-                                        <?php PagingNew('events',"status = 1 and sort_date >= '".date('Y-m-d')."'","event_id",$recordperpage,$pagenum,"courses?get")?>
+                                        <?php PagingNew('events',"status = 1 AND department =".$thisCategory['cat_id']." and sort_date >= '".date('Y-m-d')."'","event_id",$recordperpage,$pagenum,"category?id=".$thisCategory['cat_id'])?>
                                     </div>
                                     <!-- /Pagination -->
                                 </div>
@@ -190,6 +191,7 @@ $pageKeywords = "course, upcoming";
                                         foreach($upcomingCours as $upcomingCourse){
                                             $thisStartDat = explode(',', $upcomingCourse['start_date']);
                                             $thisStartDate =  explode(' ', $thisStartDat[0]);
+                                            if($upcomingCourse['image']==''){$upcomingCourse['image'] = $upcomingCourse['department'].".jpg";}
                                         ?>
                                         <div class="col-md-4 col-sm-6 isotope-item festival">
                                             <div class="thumbnail no-border no-padding">
@@ -216,7 +218,7 @@ $pageKeywords = "course, upcoming";
 
                                     <!-- Pagination -->
                                     <div class="pagination-wrapper">
-                                        <?php PagingNew('events',"status = 1 and sort_date >= '".date('Y-m-d')."'","event_id",$recordperpage,$pagenum,"courses?get")?>
+                                        <?php PagingNew('events',"status = 1 AND department =".$thisCategory['cat_id']." and sort_date >= '".date('Y-m-d')."'","event_id",$recordperpage,$pagenum,"category?id=".$thisCategory['cat_id'])?>
                                     </div>
                                     <!-- /Pagination -->
                                 </div>                                
