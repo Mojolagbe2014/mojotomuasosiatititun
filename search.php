@@ -30,6 +30,11 @@ $thisDate = !empty($qDate) ? $qDate[2]."-".$qDate[0]."-".$qDate[1] : "";
 
 $searchTerms = empty($q) ? "Courses ".(!empty($thisCategory) ? " in ".$thisCategory['cat_name']." Category, " :"").(!empty($thisState) ? " in ".$thisState['name']." State, " :"").(!empty($thisDate) ? " on ".$thisDate." " :"") : (filter_input(INPUT_GET, 'q'));
 
+$mCategory = (filter_input(INPUT_GET, 'category')!="Select Category" && filter_input(INPUT_GET, 'category')!=NULL) ? (filter_input(INPUT_GET, 'category')) : "";
+$mState = (filter_input(INPUT_GET, 'state') !="Select Location" && filter_input(INPUT_GET, 'state') !=NULL) ? (filter_input(INPUT_GET, 'state')) : "";
+$mDate = (filter_input(INPUT_GET, 'datetimepicker') != "Select Date" && filter_input(INPUT_GET, 'datetimepicker') != NULL) ? (filter_input(INPUT_GET, 'datetimepicker')) : "";
+$pagingParam = empty($q) ? (!empty($mCategory) ? "&category=$mCategory" :"").(!empty($mState) ? "&state=$mState" :"").(!empty($mDate) ? "&datetimepicker=$mDate" :"") : "&q=". urlencode(filter_input(INPUT_GET, 'q'));
+
 $pageAuthor = "Tom Associates Training";
 $pageTitle = "Search Result for $searchTerms - $pageAuthor";
 $pageDescription = $pageTitle;
@@ -160,6 +165,7 @@ $pageKeywords = "course, search";
                                         foreach($upcomingCourses as $upcomingCourse){
                                             $thisStartDat = explode(',', $upcomingCourse['start_date']);
                                             $thisStartDate =  explode(' ', $thisStartDat[0]);
+                                            if($upcomingCourse['image']==''){$upcomingCourse['image'] = $upcomingCourse['department'].".jpg";}
                                         ?>
                                         <div class="thumbnail no-border no-padding">
                                             <div class="row">
@@ -194,7 +200,7 @@ $pageKeywords = "course, search";
 
                                     <!-- Pagination -->
                                     <div class="pagination-wrapper">
-                                        <?php PagingNew('events',"status = 1 $addQuery ","event_id",$recordperpage,$pagenum,"courses?get")?>
+                                        <?php PagingNew('events',"status = 1 $addQuery ","event_id",$recordperpage,$pagenum,"search?get".$pagingParam)?>
                                     </div>
                                     <!-- /Pagination -->
                                 </div>
@@ -205,6 +211,7 @@ $pageKeywords = "course, search";
                                         foreach($upcomingCours as $upcomingCourse){
                                             $thisStartDat = explode(',', $upcomingCourse['start_date']);
                                             $thisStartDate =  explode(' ', $thisStartDat[0]);
+                                            if($upcomingCourse['image']==''){$upcomingCourse['image'] = $upcomingCourse['department'].".jpg";}
                                         ?>
                                         <div class="col-md-4 col-sm-6 isotope-item festival">
                                             <div class="thumbnail no-border no-padding">
@@ -231,7 +238,7 @@ $pageKeywords = "course, search";
 
                                     <!-- Pagination -->
                                     <div class="pagination-wrapper">
-                                        <?php PagingNew('events',"status = 1 $addQuery ","event_id",$recordperpage,$pagenum,"courses?get")?>
+                                        <?php PagingNew('events',"status = 1 $addQuery ","event_id",$recordperpage,$pagenum,"search?get".$pagingParam)?>
                                     </div>
                                     <!-- /Pagination -->
                                 </div>                                

@@ -75,8 +75,8 @@
                                 <li class="<?php echo active($_SERVER['REQUEST_URI'], 'contact-us', 'active'); ?>"><a href="<?php echo SITE_URL.'contact-us'; ?>">Contact Us</a></li>
                                 <li class="header-search-wrapper">
                                     <form action="<?php echo SITE_URL.'search'; ?>" class="header-search-form">
-                                        <input type="text" name="q" id="q" class="form-control header-search" placeholder="Search"/>
-                                        <input type="submit" hidden="hidden"/>
+                                        <input type="text" name="q" id="q" class="form-control header-search" style="display:inline" placeholder="Search" required="required"/>
+                                        <input type="submit" class="btn btn-submit-event btn-sm" style="margin: 5px;font-size: 12px;float: right;"  value="Search"/>
                                     </form>
                                 </li>
                                 <li><a href="#" class="btn-search-toggle"><i class="fa fa-search"></i></a></li>
