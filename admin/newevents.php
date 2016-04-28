@@ -41,7 +41,7 @@ if(isset($_POST['sbmt']) &&$_POST['sbmt'] == 1 ){
                 
                 
 	if(MysqlQuery("insert into events (event_title,event_description,start_date,end_date,event_cost,posted_date,sort_date,event_time,department,state,venue, image)
-										  values('".strtoupper($_SESSION['title'])."','".$_SESSION['description']."','".$startDate."','".$endDate."','".
+										  values('".$_SESSION['title']."','".$_SESSION['description']."','".$startDate."','".$endDate."','".
 											$_SESSION['fee']."','$date','$NewStartDate','".$_SESSION['time']."','".$_SESSION['department']."','".$_SESSION['state']."','".$_SESSION['venue']."','".$courseImage."')")){
 		reset ($add_event);
             while (list ($key, $val) = each ($add_event)) {
