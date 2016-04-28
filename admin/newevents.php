@@ -30,7 +30,7 @@ if(isset($_POST['sbmt']) &&$_POST['sbmt'] == 1 ){
 	if($_SESSION['title'] == "" ){$message = errorMsg('Please enter course title');}
 	elseif($_SESSION['description'] == "" ){$message = errorMsg('Please enter course description');}
 	elseif($_SESSION['department'] == "" ){$message = errorMsg('Please select department');}
-        elseif($imgType!="jpg" && $imgType!="png" && $imgType!="gif" && $imgType!="bmp" && $imgType!="jpe"){$message = errorMsg('Please select valid image');}
+        elseif($courseImage!="" && $imgType!="jpg" && $imgType!="png" && $imgType!="gif" && $imgType!="bmp" && $imgType!="jpe"){$message = errorMsg('Please select valid image');}
 	elseif($_SESSION['start_date'] == "" && $_SESSION['end_date'] == "" ){$message = errorMsg('Please select start date or end date');}
 	else{
 		$date = date("F j, Y");
