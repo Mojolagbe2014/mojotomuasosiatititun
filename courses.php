@@ -159,7 +159,7 @@ $pageKeywords = "course, upcoming";
                                                                 <i class="fa fa-stack-1x fa-arrow-right"></i>
                                                             </span>
                                                         </a>
-                                                        <h3 class="caption-title"><a href="<?php echo SITE_URL.'course/'.$upcomingCourse['event_id'].'/'.  slugify($upcomingCourse['event_title']); ?>/"><?php echo ucwords(strtolower($upcomingCourse['event_title'])); ?></a></h3>
+                                                        <h3 class="caption-title"><a href="<?php echo SITE_URL.'course/'.$upcomingCourse['event_id'].'/'.  slugify($upcomingCourse['event_title']); ?>/"><?php echo $upcomingCourse['event_title']; ?></a></h3>
                                                         <p class="caption-category"><i class="fa fa-calendar-check-o"></i> <?php echo DateRange($upcomingCourse['start_date'],$upcomingCourse['end_date']);?></p>
                                                         <p class="caption-price"><?php echo $upcomingCourse['event_cost']; ?></p>
                                                         <p class="caption-text text-justify"><?php echo RemoveHTML($upcomingCourse['event_description'], 120); ?>..</p>
@@ -167,11 +167,8 @@ $pageKeywords = "course, upcoming";
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-
-                                        <hr class="page-divider half"/>
+                                        </div><hr class="page-divider half"/>
                                         <?php } ?>
-
                                     </div>
 
                                     <!-- Pagination -->
@@ -200,7 +197,7 @@ $pageKeywords = "course, upcoming";
                                                     <div class="caption hovered"></div>
                                                 </div>
                                                 <div class="caption">
-                                                    <h3 class="caption-title"><a href="<?php echo SITE_URL.'course/'.$upcomingCourse['event_id'].'/'.  slugify($upcomingCourse['event_title']); ?>/"><?php echo ucwords(strtolower($upcomingCourse['event_title'])); ?></a></h3>
+                                                    <h3 class="caption-title"><a href="<?php echo SITE_URL.'course/'.$upcomingCourse['event_id'].'/'.  slugify($upcomingCourse['event_title']); ?>/"><?php echo $upcomingCourse['event_title']; ?></a></h3>
                                                     <p class="caption-category"><i class="fa fa-file-text-o"></i> <?php echo DateRange($upcomingCourse['start_date'],$upcomingCourse['end_date']);?></p>
                                                     <p class="caption-price"><?php echo $upcomingCourse['event_cost']; ?></p>
                                                     <p class="caption-text text-justify"><?php echo RemoveHTML($upcomingCourse['event_description'], 120); ?>..</p>

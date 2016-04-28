@@ -79,7 +79,7 @@ if(isset($_POST['submit-registration'])){
     $_SESSION['msg'] = $msg;
 }
 $pageAuthor = "Tom Associates Training";
-$pageTitle = ucwords(strtolower($rows['event_title']))." - $pageAuthor";
+$pageTitle = $rows['event_title']." - $pageAuthor";
 $pageDescription = RemoveHTML($rows['event_description'], 160);
 $pageKeywords = "course, upcoming";
 ?>
@@ -280,7 +280,7 @@ $pageKeywords = "course, upcoming";
                                                     <div class="caption hovered"></div>
                                                 </div>
                                                 <div class="caption">
-                                                    <h3 class="caption-title"><a href="<?php echo SITE_URL.'course/'.$upcomingCourse['event_id'].'/'.  slugify($upcomingCourse['event_title']); ?>/"><?php echo ucwords(strtolower($upcomingCourse['event_title'])); ?></a></h3>
+                                                    <h3 class="caption-title"><a href="<?php echo SITE_URL.'course/'.$upcomingCourse['event_id'].'/'.  slugify($upcomingCourse['event_title']); ?>/"><?php echo $upcomingCourse['event_title']; ?></a></h3>
                                                     <p class="caption-category"><i class="fa fa-calendar-check-o"></i> <?php echo DateRange($upcomingCourse['start_date'],$upcomingCourse['end_date']);?></p>
                                                     <p class="caption-price"> <?php echo $upcomingCourse['event_cost']; ?></p>
                                                     <p class="caption-text"> <?php echo RemoveHTML($upcomingCourse['event_description'], 120); ?>..</p>
