@@ -170,8 +170,13 @@ $pageKeywords = "course, upcoming";
                                 <div class="post-excerpt" style="line-height:2.0;"><?php echo stripslashes($rows['event_description']);?></div>
                             </div>
                             <!-- -->
+                            
                             <hr class="page-divider line large"/>
                             <!-- -->
+                            <h1 class="section-title">
+                                <span class="icon-inner"><span class="fa-stack"><i class="fa rhex fa-stack-2x"></i><i class="fa fa-pencil fa-stack-1x"></i></span></span>
+                                <span class="title-inner">Book for this course</span>
+                            </h1>
 
                             <form id="registration-form" name="registration-form" class="registration-form registration-form-alt" action="" method="post">
                                 <div class="row">
