@@ -8,7 +8,7 @@ $database = new Database();
 if(!isset($_GET['id']) || !is_numeric($_GET['id'])){ header("Location: ".SITE_URL."courses"); }
 $thisCategory = $database -> select(false,'course_categories'," cat_id = ".$_GET['id'],"cat_id LIMIT 1");
 
-$recordperpage =  1;
+$recordperpage =  15;
 $pg = "";
 $pagenum = 1;
 if(isset($_GET['page'])){
@@ -129,15 +129,15 @@ $pageKeywords = "course, upcoming";
                             <div class="listing-meta">
                                 <div class="options">
                                     <ul class="list-grid-tabs" role="tablist">                                    
-                                        <li role="presentation"> <a class="view-list" href="#list-view" data-toggle="tab" role="tab" ><i class="fa fa-th-list"></i></a></li>
-                                        <li class="active"  role="presentation"><a class="view-th " href="#grid-view" data-toggle="tab" role="tab"><i class="fa fa-th"></i></a></li>
+                                        <li class="active" role="presentation"> <a class="view-list" href="#list-view" data-toggle="tab" role="tab" ><i class="fa fa-th-list"></i></a></li>
+                                        <li role="presentation"><a class="view-th " href="#grid-view" data-toggle="tab" role="tab"><i class="fa fa-th"></i></a></li>
                                     </ul>
                                 </div>
 
                             </div>
 
                             <div class="tab-content">
-                                <div id="list-view"  class="tab-pane fade" role="tabpanel">
+                                <div id="list-view"  class="tab-pane fade active in" role="tabpanel">
                                     <div class="thumbnails events vertical">
                                         <?php
                                         $upcomingCourses = $database -> select(true,"events","status = 1 AND department =".$thisCategory['cat_id']." AND sort_date >= '".date('Y-m-d')."' ","sort_date LIMIT $recordperpage OFFSET $offset ");
@@ -184,7 +184,7 @@ $pageKeywords = "course, upcoming";
                                     </div>
                                     <!-- /Pagination -->
                                 </div>
-                                <div id="grid-view"  class="tab-pane fade active in" role="tabpanel">
+                                <div id="grid-view"  class="tab-pane fade" role="tabpanel">
                                     <div class="row thumbnails events">
                                         <?php
                                         $upcomingCours = $database -> select(true,"events","status = 1 AND department =".$thisCategory['cat_id']." AND sort_date >= '".date('Y-m-d')."' ","sort_date LIMIT $recordperpage OFFSET $offset ");
