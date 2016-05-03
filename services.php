@@ -26,9 +26,9 @@ $pageKeywords = "our, services";
         <link href="<?php echo SITE_URL; ?>assets/plugins/animate/animate.min.css" rel="stylesheet">
         <link href="<?php echo SITE_URL; ?>assets/plugins/countdown/jquery.countdown.css" rel="stylesheet">
 
-        <link href="<?php echo SITE_URL; ?>assets/css/theme.css" rel="stylesheet">
+        <link href="<?php echo SITE_URL; ?>assets/css/theme.css?<?php echo time() ?>" rel="stylesheet">
         <link href="<?php echo SITE_URL; ?>assets/css/custom.css" rel="stylesheet">
-        <link href="<?php echo SITE_URL; ?>assets/css/additional-style.css" rel="stylesheet" type="text/css"/>
+        <link href="<?php echo SITE_URL; ?>assets/css/additional-style.css?<?php echo time() ?>" rel="stylesheet" type="text/css"/>
         <link href="<?php echo SITE_URL; ?>assets/plugins/sweet-alert/sweetalert.css" rel="stylesheet" type="text/css"/>
         <link href="<?php echo SITE_URL; ?>assets/plugins/sweet-alert/google.css" rel="stylesheet" type="text/css"/>
         <!--[if lt IE 9]>
