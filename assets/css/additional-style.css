@@ -25,10 +25,10 @@ div.banner-holder{
 }
 
 .multipage .header .header-wrapper {
-    padding: 10px 0 0 0;
+    padding: 20px 0 0 0;
 }
 .wide.multipage .header, .boxed.multipage .header > .container {
-    padding-bottom: 1px;
+    padding-bottom: 5px;
 }
 
 @media only screen and (min-width : 320px) and (max-width : 480px) {
