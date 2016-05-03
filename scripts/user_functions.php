@@ -249,7 +249,7 @@ function list_events($day,$month,$year) {
         
 function flashingUpcomingEvents(){
     global $database;
-    $rows = $database->select(true,'events',"status = 1 and sort_date >= '".date('Y-m-d')."'","event_id DESC LIMIT 30 ");
+    $rows = $database->select(true,'events',"status = 1 and sort_date >= '".date('Y-m-d')."'","sort_date ASC LIMIT 25 ");
 
     $num_rows = count($rows);
     if($num_rows > 0) {
