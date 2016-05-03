@@ -285,7 +285,7 @@ body.boxed {
 .wide .page-section.background-img-slider,
 .boxed .page-section.background-img-slider > .container {
     margin-top:100px; 
-    background: transparent url("../img/preview/home.jpg") 50% 0 repeat !important;
+    background: transparent url("../img/preview/slider-bg.jpg") 50% 0 repeat !important;
     background-position: 50% 0 !important;
     background-size: cover !important;
 }
