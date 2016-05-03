@@ -50,19 +50,8 @@
                             </div>
                             <div class="col-md-3">
                                 <div class="widget widget-flickr-feed">
-                                    <h4 class="widget-title"><span>Facilities Image Gallery</span></h4>
-                                    <ul>
-                                        <?php
-                                        $facility = $database->select(true,'gallery',"type = 'facility'","gallery_id desc limit 0, 6");
-                                        foreach($facility as $facility){
-                                        ?>
-                                        <li>
-                                            <a class="thumb-holder" data-rel="prettyPhoto" href="<?php echo SITE_URL; ?>gallery" title="gallery image">
-                                                <img src="<?php echo SITE_URL; ?>images/gallery/thumb/<?php echo $facility['file'];?>" alt="gallery images">
-                                            </a>
-                                        </li>
-                                        <?php } ?>
-                                    </ul>
+                                    <h4 class="widget-title">Facebook's Facebox</h4>
+                                    <div class="fb-like-box" data-href="http://www.facebook.com/pages/Tom-Associates-Training/300089356711055" data-width="520" data-height="350" data-show-faces="true" data-stream="false" data-header="true"></div>
                                 </div>
                             </div>
 

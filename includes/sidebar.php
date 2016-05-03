@@ -14,8 +14,8 @@
                             </div>
 
 <!--                            <div class="widget">
-                                <h4 class="widget-title">Facebook</h4>
-                                <div class="fb-like-box" data-href="http://www.facebook.com/pages/Tom-Associates-Training/300089356711055" data-width="350" data-height="350" data-show-faces="true" data-stream="false" data-header="true"></div>
+                                <h4 class="widget-title">Facebook's Facebox</h4>
+                                <div class="fb-like-box" data-href="http://www.facebook.com/pages/Tom-Associates-Training/300089356711055" data-width="520" data-height="350" data-show-faces="true" data-stream="false" data-header="true"></div>
                             </div>-->
 
                         </aside>
