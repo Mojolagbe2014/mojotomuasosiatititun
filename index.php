@@ -59,9 +59,30 @@ $pageKeywords = "course, upcoming, training, tom associate, events";
                         <div class="container">
 
                             <div id="main-slider" class="owl-carousel owl-theme">
-
                                 <!-- Slide -->
-                                
+                                <div class="item text-center slide5">
+                                    <div class="caption">
+                                        <div class="container">
+                                            <div class="div-table">
+                                                <div class="div-cell">
+
+                                                    <div class="div-table slider-content">
+
+                                                        <div class="div-cell event-image"></div>
+                                                        <div class="div-cell">
+
+                                                            <h3 class="caption-subtitle animated fadeInUp visible" data-animation="fadeInUp" data-animation-delay="300">Conducive Classrooms</h3>
+                                                            <h2 class="caption-title animated fadeInDown visible" data-animation="fadeInDown" data-animation-delay="100"></h2>
+                                                            <p class="caption-text"></p>
+
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                                 <!-- Slide -->
                                 <div class="item text-center slide5">
                                     <div class="caption">
@@ -86,7 +107,55 @@ $pageKeywords = "course, upcoming, training, tom associate, events";
                                         </div>
                                     </div>
                                 </div>
+                                
+                                <!-- Slide -->
+                                <div class="item text-center slide5">
+                                    <div class="caption">
+                                        <div class="container">
+                                            <div class="div-table">
+                                                <div class="div-cell">
 
+                                                    <div class="div-table slider-content">
+
+                                                        <div class="div-cell event-image"></div>
+                                                        <div class="div-cell">
+
+                                                            <h3 class="caption-subtitle animated fadeInUp visible" data-animation="fadeInUp" data-animation-delay="300">Cutting Edge Courses</h3>
+                                                            <h2 class="caption-title animated fadeInDown visible" data-animation="fadeInDown" data-animation-delay="100"></h2>
+                                                            <p class="caption-text"></p>
+
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Slide -->
+                                <div class="item text-center slide5">
+                                    <div class="caption">
+                                        <div class="container">
+                                            <div class="div-table">
+                                                <div class="div-cell">
+
+                                                    <div class="div-table slider-content">
+
+                                                        <div class="div-cell event-image"></div>
+                                                        <div class="div-cell">
+
+                                                            <h3 class="caption-subtitle animated fadeInUp visible" data-animation="fadeInUp" data-animation-delay="300">Talented Trainers</h3>
+                                                            <h2 class="caption-title animated fadeInDown visible" data-animation="fadeInDown" data-animation-delay="100"></h2>
+                                                            <p class="caption-text"></p>
+
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
 
                         </div>
