@@ -20,28 +20,17 @@ div.banner-holder{
 .wide .page-section, .boxed .page-section > .container {
     padding-top: 20px;
 }
-.wide .page-section, .boxed .page-section > .container {
-    padding-bottom: 20px;
-}
+.wide .page-section, .boxed .page-section > .container {padding-bottom: 20px;}
 
-.multipage .header .header-wrapper {
-    padding: 20px 0 0 0;
-}
-.wide.multipage .header, .boxed.multipage .header > .container {
-    padding-bottom: 5px;
-}
-.sf-menu li.active {
-    background-color: #9B2231;
-}
-.sf-menu li.active a:hover {
-    color: #fffccc;
-}
-.multipage .sf-menu ul li {
-    background: #9B2231;
-}
-.top-line .user-menu li a {
-    color: #dc143c; font-weight: bold;
-}
+.multipage .header .header-wrapper {padding: 20px 0 0 0;}
+.wide.multipage .header, .boxed.multipage .header > .container {padding-bottom: 5px;}
+.sf-menu li.active {background-color: #9B2231;}
+.sf-menu li.active a:hover {color: #fffccc;}
+.multipage .sf-menu ul li {background: #9B2231; }
+.top-line .user-menu li a {color: #dc143c; font-weight: bold; }
+
+.multipage .sf-menu a { color: #9B2231;}
+
 @media only screen and (min-width : 320px) and (max-width : 480px) {
     div.hide-mobile{display:none}
     #main-slider .slide5 .caption-subtitle { font-size: 30px; margin-top: 0px; }
