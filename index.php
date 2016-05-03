@@ -28,7 +28,7 @@ $pageKeywords = "course, upcoming, training, tom associate, events";
 
         <link href="<?php echo SITE_URL; ?>assets/css/theme.css" rel="stylesheet">
         <link href="<?php echo SITE_URL; ?>assets/css/custom.css" rel="stylesheet">
-        <link href="<?php echo SITE_URL; ?>assets/css/additional-style.css" rel="stylesheet" type="text/css"/>
+        <link href="<?php echo SITE_URL; ?>assets/css/additional-style.css?<?php echo time() ?>" rel="stylesheet" type="text/css"/>
         <link href="<?php echo SITE_URL; ?>assets/plugins/sweet-alert/sweetalert.css" rel="stylesheet" type="text/css"/>
         <link href="<?php echo SITE_URL; ?>assets/plugins/sweet-alert/google.css" rel="stylesheet" type="text/css"/>
         <!--[if lt IE 9]>
@@ -232,7 +232,7 @@ $pageKeywords = "course, upcoming, training, tom associate, events";
                 <section class="page-section light">
                     <div class="container">
                         <div class="banner-holder hide-mobile">
-                            <p>Running Courses</p>
+                            <p class="margin-top">Running Courses</p>
                             <?php $imageFileName = file_get_contents("images/bannerName.php"); ?>
                             <a href="calendar?month=<?php echo date('m');?>&year=<?php echo date('Y');?>"><img src="images/<?php echo $imageFileName;?>" width="728" height="90" alt="tom banner advert"></a>
                         </div>
