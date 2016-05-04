@@ -150,15 +150,15 @@ $pageKeywords = "course, search";
                                 </div>
                                 <div class="options">
                                     <ul class="list-grid-tabs" role="tablist">                                    
-                                        <li role="presentation"> <a class="view-list" href="#list-view" data-toggle="tab" role="tab" ><i class="fa fa-th-list"></i></a></li>
-                                        <li class="active"  role="presentation"><a class="view-th " href="#grid-view" data-toggle="tab" role="tab"><i class="fa fa-th"></i></a></li>
+                                        <li class="active" role="presentation"> <a class="view-list" href="#list-view" data-toggle="tab" role="tab" ><i class="fa fa-th-list"></i></a></li>
+                                        <li role="presentation"><a class="view-th " href="#grid-view" data-toggle="tab" role="tab"><i class="fa fa-th"></i></a></li>
                                     </ul>
                                 </div>
 
                             </div>
 
                             <div class="tab-content">
-                                <div id="list-view"  class="tab-pane fade" role="tabpanel">
+                                <div id="list-view"  class="tab-pane fade active in" role="tabpanel">
                                     <div class="thumbnails events vertical">
                                         <?php
                                         $upcomingCourses = $database -> select(true,"events","status = 1 $addQuery ","sort_date DESC LIMIT $recordperpage OFFSET $offset ");
@@ -204,7 +204,7 @@ $pageKeywords = "course, search";
                                     </div>
                                     <!-- /Pagination -->
                                 </div>
-                                <div id="grid-view"  class="tab-pane fade active in" role="tabpanel">
+                                <div id="grid-view"  class="tab-pane fade" role="tabpanel">
                                     <div class="row thumbnails events">
                                         <?php
                                         $upcomingCours = $database -> select(true,"events","status = 1 $addQuery ","sort_date DESC LIMIT $recordperpage OFFSET $offset ");

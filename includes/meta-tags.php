@@ -26,7 +26,7 @@
         <meta property="og:description" content="<?php echo $pageDescription; ?>" />
         <meta property="twitter:title" content="<?php echo $pageTitle; ?>" />
         <meta property="twitter:description" content="<?php echo $pageDescription; ?>" />
-        <meta property="og:image" content="<?php echo SITE_URL; ?>assets/ico/tom_favicon.ico"/>
+        <meta property="og:image" content="<?php echo SITE_URL; ?>assets/ico/tom_favicon.png"/>
         <meta property="og:image:type" content="image/jpeg"/>
         <meta property="og:image:width" content="200"/>
         <meta property="og:image:height" content="200"/>
